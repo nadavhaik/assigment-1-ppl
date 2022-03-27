@@ -1,2 +1,16 @@
 # Project exclude paths
 /node_modules/
+.idea/jsLibraryMappings.xml
+.idea/vcs.xml
+dist/src/lib/result.js
+dist/src/lib/result.js.map
+dist/src/part2/part2.js
+dist/src/part2/part2.js.map
+dist/src/part3/find.js
+dist/src/part3/find.js.map
+dist/test/part2/part2.test.js
+dist/test/part2/part2.test.js.map
+dist/test/part3/find.test.js
+dist/test/part3/find.test.js.map
+src/.DS_Store
+src/part2/part2.ts
