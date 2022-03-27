@@ -4,7 +4,8 @@ import {filter} from "ramda";
 const stringToArray = R.split("");
 
 const isEnglishChar: (s: string) => boolean = (s: string) => {
-    return s.length == 1 && ((56 <= s.charCodeAt(0) <= 90) || (97 <= s.charCodeAt(0) <= 122))
+    return s.length == 1 && ((56 <= s.charCodeAt(0) && s.charCodeAt(0) <= 90) ||
+        (97 <= s.charCodeAt(0) && s.charCodeAt(0) <= 122))
 }
 
 /* Question 1 */
@@ -21,4 +22,3 @@ interface WordTree {
 }
 
 export const treeToSentence = (t: WordTree): string => undefined
-
