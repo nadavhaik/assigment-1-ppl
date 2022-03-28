@@ -31,7 +31,7 @@ const isEven = (x: number) => x % 2 === 0
 const square = (x: number) => x * x
 
 export const returnSquaredIfFoundEven_v2 = (a: number[]):  Result<number> =>
-    bind<number, number>(findResult(isEven, a), R.pipe(square, makeOk))
+    bind(findResult(isEven, a), R.pipe(square, makeOk))
 
 export const returnSquaredIfFoundEven_v3 =(a: number[]):  number =>
     either(findResult(isEven, a), square, () => -1)
