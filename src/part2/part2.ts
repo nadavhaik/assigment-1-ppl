@@ -17,7 +17,8 @@ const numberOfOccurrences = (s: string, char: string) => stringToArray(s).filter
 const prefixAt = (s: string) => (i: number) => s.substring(0, i)
 const allPrefixes = (s: string) => R.map(prefixAt(s), R.range(0, s.length+1))
 const validPrefix = (leftBracket: string, rightBracket: string) =>
-    (prefix: string) => numberOfOccurrences(prefix, leftBracket) >= numberOfOccurrences(prefix, rightBracket)
+    (prefix: string) =>
+        numberOfOccurrences(prefix, leftBracket) >= numberOfOccurrences(prefix, rightBracket)
 
 const specificIsPaired: (s: string, leftBracket: string, rightBracket: string) => boolean =
     (s: string, leftBracket: string, rightBracket: string) =>
