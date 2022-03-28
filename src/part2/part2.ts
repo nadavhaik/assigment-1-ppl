@@ -15,7 +15,7 @@ export const countLetters: (s: string) => {} = R.pipe(stringToArray, R.filter(is
 /* Question 2 */
 const numberOfOccurrences = (s: string, char: string) => stringToArray(s).filter(R.equals(char)).length
 const prefixAt = (s: string) => (i: number) => s.substring(0, i)
-const allPrefixes = (s: string) => R.map(prefixAt(s), Array.from(stringToArray(s).keys()))
+const allPrefixes = (s: string) => R.map(prefixAt(s), R.range(0, s.length+1))
 const validPrefix = (leftBracket: string, rightBracket: string) =>
     (prefix: string) => numberOfOccurrences(prefix, leftBracket) >= numberOfOccurrences(prefix, rightBracket)
 
