@@ -10,9 +10,11 @@ const isEnglishChar: (s: string) => boolean = (s: string) =>
 export const countLetters: (s: string) => {} = R.pipe(stringToArray, R.filter(isEnglishChar), R.countBy(R.toLower))
 
 /* Question 2 */
-const numberOfOccurrences = (s: string, char: string) => stringToArray(s).filter(R.equals(char)).length
+const numberOfOccurrences: (s: string, char: string) => number =
+    (s: string, char: string) => stringToArray(s).filter(R.equals(char)).length
 const prefixAt = (s: string) => (i: number) => s.substring(0, i)
-const allPrefixes = (s: string) => R.map(prefixAt(s), R.range(0, s.length+1))
+const allPrefixes: (s: string) => string[] =
+    (s: string) => R.map(prefixAt(s), R.range(0, s.length+1))
 const validPrefix = (leftBracket: string, rightBracket: string) =>
     (prefix: string) =>
         numberOfOccurrences(prefix, leftBracket) >= numberOfOccurrences(prefix, rightBracket)
@@ -33,7 +35,7 @@ export interface WordTree {
     children: WordTree[];
 }
 
-const deleteLastChar = (s: string) => s.substring(0, s.length-1)
+const deleteLastChar: (s: string) =>  string = (s: string) => s.substring(0, s.length-1)
 const recTreeToSentence: (t: WordTree) => string = (t: WordTree) =>
     t.root + " " + R.map(recTreeToSentence, t.children).join('')
 
