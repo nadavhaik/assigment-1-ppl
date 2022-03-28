@@ -1,7 +1,9 @@
 import * as R from "ramda";
 
+// General functions:
 const stringToArray = R.split("");
 const arrayToString = (strings: string[]) => R.reduce((s1, s2: string) => s1+s2, "", strings)
+const deleteLastChar = (s: string) => s.substring(0, s.length-1)
 
 /* Question 1 */
 const isEnglishChar: (s: string) => boolean = (s: string) =>
@@ -32,6 +34,5 @@ export interface WordTree {
 
 const recTreeToSentence: (x: WordTree) => string = (t: WordTree) =>
     t.root + " " + arrayToString(R.map(recTreeToSentence, t.children))
-const deleteLastChar = (s: string) => s.substring(0, s.length-1)
 
 export const treeToSentence: (t: WordTree) => string = R.pipe(recTreeToSentence, deleteLastChar)
