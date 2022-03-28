@@ -32,7 +32,7 @@ export interface WordTree {
     children: WordTree[];
 }
 
-const recTreeToSentence: (x: WordTree) => string = (t: WordTree) =>
+const recTreeToSentence: (t: WordTree) => string = (t: WordTree) =>
     t.root + " " + arrayToString(R.map(recTreeToSentence, t.children))
 
 export const treeToSentence: (t: WordTree) => string = R.pipe(recTreeToSentence, deleteLastChar)
