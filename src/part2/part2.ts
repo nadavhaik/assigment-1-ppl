@@ -12,11 +12,11 @@ const isEnglishChar: (s: string) => boolean = (s: string) =>
 
 export const countLetters: (s: string) => {} = R.pipe(stringToArray, R.filter(isEnglishChar), R.countBy(R.toLower))
 
+/* Question 2 */
 const filterPairs: (s: string, leftBracket: string, rightBracket: string) => string[] =
     (s: string, leftBracket: string, rightBracket: string) =>
         R.pipe(stringToArray, R.filter((c) => c == leftBracket || c == rightBracket))(s)
 
-/* Question 2 */
 const specificIsPaired: (s: string, leftBracket: string, rightBracket: string) =>
     boolean = (s: string, leftBracket: string, rightBracket: string) =>
         leftBracket.length == 1 && rightBracket.length == 1 &&
