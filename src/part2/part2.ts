@@ -3,7 +3,7 @@ import {keys} from "ramda";
 
 // General functions:
 const stringToArray = R.split("");
-const arrayToString = (strings: string[]) => R.reduce((s1, s2: string) => s1+s2, "", strings)
+const arrayToString = (strings: string[]) => R.reduce((s1: string, s2: string) => s1+s2, "", strings)
 const deleteLastChar = (s: string) => s.substring(0, s.length-1)
 /* Question 1 */
 const isEnglishChar: (s: string) => boolean = (s: string) =>
