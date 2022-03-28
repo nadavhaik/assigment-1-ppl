@@ -7,8 +7,8 @@ const deleteLastChar = (s: string) => s.substring(0, s.length-1)
 
 /* Question 1 */
 const isEnglishChar: (s: string) => boolean = (s: string) =>
-    s.length == 1 && ((56 <= s.charCodeAt(0) && s.charCodeAt(0) <= 90) ||
-        (97 <= s.charCodeAt(0) && s.charCodeAt(0) <= 122))
+    s.length == 1 &&
+        ((56 <= s.charCodeAt(0) && s.charCodeAt(0) <= 90) || (97 <= s.charCodeAt(0) && s.charCodeAt(0) <= 122))
 
 export const countLetters: (s: string) => {} = R.pipe(stringToArray, R.filter(isEnglishChar), R.countBy(R.toLower))
 
