@@ -21,7 +21,7 @@ const specificIsPaired: (s: string, leftBracket: string, rightBracket: string) =
     boolean = (s: string, leftBracket: string, rightBracket: string) =>
         leftBracket.length == 1 && rightBracket.length == 1 &&
             arrayToString(filterPairs(s, leftBracket, rightBracket)) ===
-            (leftBracket + rightBracket).repeat(filterPairs(s, leftBracket, rightBracket).length/2)
+            (leftBracket + rightBracket).repeat(Math.floor(filterPairs(s, leftBracket, rightBracket).length/2))
 
 export const isPaired: (s: string) => boolean = (s: string) => specificIsPaired(s, "(", ")")
     && specificIsPaired(s, "[", "]") && specificIsPaired(s, "{", "}")
