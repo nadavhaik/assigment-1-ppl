@@ -25,8 +25,10 @@ const specificIsPaired: (s: string, leftBracket: string, rightBracket: string) =
         numberOfOccurrences(s, leftBracket) === numberOfOccurrences(s, rightBracket) &&
         R.all(validPrefix(leftBracket, rightBracket), allPrefixes(s))
 
-export const isPaired: (s: string) => boolean = (s: string) => specificIsPaired(s, "(", ")")
-    && specificIsPaired(s, "[", "]") && specificIsPaired(s, "{", "}")
+export const isPaired: (s: string) => boolean = (s: string) =>
+    specificIsPaired(s, "(", ")") &&
+    specificIsPaired(s, "[", "]") &&
+    specificIsPaired(s, "{", "}")
 
 /* Question 3 */
 export interface WordTree {
