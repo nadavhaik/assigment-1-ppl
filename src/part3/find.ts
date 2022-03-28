@@ -1,4 +1,5 @@
 import { Result, makeFailure, makeOk, bind, either } from "../lib/result";
+import * as R from "ramda";
 
 /* Library code */
 const findOrThrow = <T>(pred: (x: T) => boolean, a: T[]): T => {
@@ -30,7 +31,7 @@ const isEven = (x: number) => x % 2 === 0
 const square = (x: number) => x * x
 
 export const returnSquaredIfFoundEven_v2 = (a: number[]):  Result<number> =>
-    bind<number, number>(findResult(isEven, a), (x: number) => makeOk(square(x)))
+    bind<number, number>(findResult(isEven, a), R.pipe(square, makeOk))
 
 export const returnSquaredIfFoundEven_v3 =(a: number[]):  number =>
     either(findResult(isEven, a), square, () => -1)
