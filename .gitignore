@@ -15,3 +15,4 @@ dist/test/part3/find.test.js.map
 src/.DS_Store
 src/part2/part2.ts
 /.idea/
+/coverage/
