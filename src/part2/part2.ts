@@ -32,7 +32,7 @@ export const recIsPaired: (bracketsString: string, stackString: string) => boole
             recIsPaired(deleteFirstChar(bracketsString), addStrings(stackString, firstChar(bracketsString))) :
         /** else: bracketsString starts with a closing bracket **/
         stackString === "" || !bracketCloses(lastChar(stackString), firstChar(bracketsString)) ? false :
-        // ** else: brackets do close **/
+        // ** else: brackets do close ** //
         recIsPaired(deleteFirstChar(bracketsString), deleteLastChar(stackString))
 
 
