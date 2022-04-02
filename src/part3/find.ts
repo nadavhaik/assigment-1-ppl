@@ -9,13 +9,9 @@ const findOrThrow = <T>(pred: (x: T) => boolean, a: T[]): T => {
     throw "No element found.";
 }
 
+
 export const findResult = <T>(pred: (x: T) => boolean, arr: T[]): Result<T> => {
-    try {
-        return makeOk(findOrThrow(pred, arr))
-    } catch (e) {
-        return makeFailure("No element found.")
-    }
-}
+    return R.filter((x)=>(pred(x)),arr).length>0 ? makeOk(findOrThrow(pred,arr)) : makeFailure("failed")}
 
 /* Client code */
 const returnSquaredIfFoundEven_v1 = (a: number[]): number => {
