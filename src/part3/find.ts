@@ -11,7 +11,7 @@ const findOrThrow = <T>(pred: (x: T) => boolean, a: T[]): T => {
 
 
 export const findResult = <T>(pred: (x: T) => boolean, arr: T[]): Result<T> =>
-    R.filter((x)=>(pred(x)),arr).length>0 ? makeOk(findOrThrow(pred,arr)) : makeFailure("failed")
+    R.filter(pred, arr).length>0 ? makeOk(findOrThrow(pred,arr)) : makeFailure("failed")
 
 /* Client code */
 const returnSquaredIfFoundEven_v1 = (a: number[]): number => {
