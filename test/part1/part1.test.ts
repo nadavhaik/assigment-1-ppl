@@ -3,7 +3,7 @@ import * as R from "ramda"
 
 describe("averageGradesOver60", () => {
     it("checksThatFunctionsAreEqual", () => {
-        let gradesLists: number[][] = [
+        const gradesLists: number[][] = [
             [],
             [0],
             [100],
