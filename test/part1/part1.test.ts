@@ -9,9 +9,10 @@ describe("averageGradesOver60", () => {
             [100],
             [60],
             [61],
+            [60.1],
             [10, 0, 12.5],
             R.range(0, 101),
-            [30.5, 12.4, 73, 60, 74]
+            [30.5, 12.4, 73, 60, 74, 60.1]
         ]
         gradesLists.forEach((grades: number[]) =>
             expect(averageGradesOver60_regular_version(grades))
