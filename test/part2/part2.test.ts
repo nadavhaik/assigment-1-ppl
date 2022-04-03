@@ -23,6 +23,7 @@ describe("Assignment 1 Part 2", () => {
             expect(isPaired("This is ]some[ }text{")).toBe(false);
             expect(isPaired("(")).toBe(false);
             expect(isPaired(")(")).toBe(false);
+            expect(isPaired("({)}")).toBe(false);
         });
     });
 
